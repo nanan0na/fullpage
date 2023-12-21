@@ -27,6 +27,18 @@ body {
 #header.hide {
   top: -70px;
 }
+#header nav {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  gap: 20px;
+}
+#header nav a {
+  display: block;
+  padding: 10px 20px;
+  color: #f39;
+}
 #footer {
   height: 100px;
   background: #333;
