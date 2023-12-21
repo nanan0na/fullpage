@@ -22,12 +22,24 @@ $(function () {
     // 영역 콘텐츠의 세로 정렬
     verticalCentered: false,
 
+    // 스크롤바 생성되게
+    scrollBar: true,
+
+    // 큰 영역으로 이동할 때 상단에 철컥 붙게
+    bigSectionsDestination: 'top',
+
     // 영역 로딩이 되고나서
     afterLoad: function (anchorLink, index) {
       var loadedSection = $(this);
       console.log('로딩된 후 :' + anchorLink, index, loadedSection);
       if (anchorLink === 'sec4') {
         $btnTop.fadeIn();
+      }
+      // 두 번째 영역에서는 자동 스크롤 취소
+      if (anchorLink === 'sec2') {
+        $.fn.fullpage.setAutoScrolling(false);
+      } else {
+        $.fn.fullpage.setAutoScrolling(true);
       }
     },
 
